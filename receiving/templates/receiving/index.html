@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Goods Receiving · PO, scan, confirm, GRN</title>
+<style>
+  :root {
+    --paper: #eef0ec; --card: #ffffff; --ink: #1b2a2f; --muted: #5d6b6f; --line: #d5dad4;
+    --green: #1f4e46; --green-soft: #dcebe6; --amber: #b87500; --amber-soft: #fbefd2;
+    --red: #a63232; --red-soft: #f6dcdc;
+    --mono: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, monospace;
+    --sans: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 15px/1.5 var(--sans); }
+  header { background: var(--green); color: #fff; padding: 10px 24px; display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  header h1 { margin: 0; font-size: 18px; font-weight: 600; }
+  header span { opacity: .75; font-size: 13px; }
+  main { max-width: 1240px; margin: 0 auto; padding: 14px 24px 50px; display: grid; gap: 14px; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; }
+  h2 { margin: 0; font-size: 15px; font-weight: 600; }
+  label { display: block; font-size: 12.5px; color: var(--muted); margin-bottom: 3px; }
+  input[type=text] {
+    width: 100%; padding: 8px 10px; font: 15px var(--mono); border: 1.5px solid var(--line);
+    border-radius: 4px; background: #fff; color: var(--ink);
+  }
+  input[type=text]:focus { outline: 3px solid var(--green-soft); border-color: var(--green); }
+  input[type=text]:disabled, input[readonly] { background: #f1f3f0; color: var(--muted); }
+  button {
+    font: 600 14px var(--sans); padding: 8px 14px; border-radius: 4px; border: 1.5px solid var(--green);
+    background: var(--green); color: #fff; cursor: pointer; white-space: nowrap;
+  }
+  button.ghost { background: #fff; color: var(--green); }
+  button.danger { background: #fff; color: var(--red); border-color: var(--line); padding: 4px 10px; font-weight: 500; }
+  button.reject { background: #fff; color: var(--red); border-color: var(--red); }
+  button:disabled { opacity: .45; cursor: not-allowed; }
+  button:focus-visible { outline: 3px solid var(--green-soft); outline-offset: 2px; }
+  [hidden] { display: none !important; }
+
+  /* PO, scan and GRN share one row */
+  .flow { display: grid; grid-template-columns: 1fr 1.5fr 1fr; gap: 16px; align-items: start; }
+  @media (max-width: 960px) { .flow { grid-template-columns: 1fr; } }
+  .cell { padding-left: 14px; border-left: 3px solid var(--line); transition: border-color .15s; }
+  .cell.now { border-left-color: var(--green); }
+  .cell.off { opacity: .5; }
+  .cell.done { border-left-color: var(--green-soft); }
+  .inline { display: flex; gap: 8px; align-items: center; }
+  .po-badge { font: 600 17px var(--mono); background: var(--green-soft); color: var(--green); padding: 4px 12px; border-radius: 4px; }
+  .status { margin-top: 10px; padding: 5px 10px; border-radius: 4px; font-size: 13.5px; background: var(--green-soft); color: var(--green); }
+  .status.wait { background: var(--amber-soft); color: var(--amber); }
+  .status.err { background: var(--red-soft); color: var(--red); }
+
+  .det-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+  .det-head .grow { flex: 1; min-width: 120px; }
+  .src { font: 12.5px var(--mono); color: var(--muted); word-break: break-all; margin: 0 0 8px; }
+  .hint { font-size: 13px; color: var(--muted); margin: 0 0 8px; }
+  .key-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 8px 12px; margin-bottom: 12px; }
+  .field input { font-size: 14px; }
+  .field.missing input { border-color: var(--amber); background: var(--amber-soft); }
+  .field.missing label::after { content: "  not found, type it in"; color: var(--amber); }
+  h3 { margin: 6px 0 6px; font-size: 13px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+  .scroll { overflow: auto; max-height: 340px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { background: #f5f7f4; font-weight: 600; position: sticky; top: 0; }
+  td.k { color: var(--muted); width: 34%; }
+  td.mono, th.mono { font-family: var(--mono); }
+  .empty { color: var(--muted); padding: 16px 12px; text-align: center; }
+
+  .bar { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; margin-bottom: 10px; }
+  .bar .grow { flex: 1; min-width: 160px; }
+  select { padding: 8px 10px; font: 14px var(--mono); border: 1.5px solid var(--line); border-radius: 4px; background: #fff; min-width: 200px; }
+  details summary { cursor: pointer; color: var(--green); font-size: 13px; }
+  details table { margin-top: 6px; }
+</style>
+</head>
+<body>
+{% csrf_token %}
+<header>
+  <h1>Goods receiving</h1>
+  <span>PO, then scan, then receptionist confirms, then GRN</span>
+</header>
+
+<main>
+  <section aria-label="Receiving">
+    <div class="flow">
+      <div id="c-po" class="cell now">
+        <label for="po">1 · PO number</label>
+        <div id="po-edit" class="inline">
+          <input id="po" type="text" autocomplete="off" autofocus placeholder="e.g. PO-24-0187">
+          <button id="po-set" type="button">Set</button>
+        </div>
+        <div id="po-locked" class="inline" hidden>
+          <span class="po-badge" id="po-badge"></span>
+          <button id="po-change" class="ghost" type="button">Change</button>
+        </div>
+      </div>
+
+      <div id="c-scan" class="cell off">
+        <label for="scan">2 · Scan QR code (click here, then scan; pasting a link also works)</label>
+        <div class="inline">
+          <input id="scan" type="text" autocomplete="off" placeholder="Enter a PO first" disabled>
+          <button id="go" class="ghost" type="button" disabled>Get details</button>
+        </div>
+      </div>
+
+      <div id="c-grn" class="cell off">
+        <label for="grn">4 · GRN number (opens after confirmation)</label>
+        <div class="inline">
+          <input id="grn" type="text" autocomplete="off" placeholder="e.g. GRN-5521" disabled>
+          <button id="save" type="button" disabled>Save</button>
+        </div>
+      </div>
+    </div>
+    <div id="status" class="status" role="status">Start by entering the PO number being received.</div>
+  </section>
+
+  <section id="det-sec" aria-labelledby="det-h" hidden>
+    <div class="det-head">
+      <h2 id="det-h">3 · Check the details against the item</h2>
+      <span class="grow"></span>
+      <button id="reject" class="reject" type="button">Reject and scan again</button>
+      <button id="confirm" type="button">Confirm item</button>
+    </div>
+    <p id="src" class="src"></p>
+    <p id="hint" class="hint">The receptionist can correct any key detail before confirming.</p>
+    <div id="key-grid" class="key-grid"></div>
+    <h3>Other details</h3>
+    <div class="scroll"><table id="other"><tbody></tbody></table></div>
+  </section>
+
+  <section aria-labelledby="rec-h">
+    <div class="bar">
+      <h2 id="rec-h">Received items</h2>
+      <div class="grow"></div>
+      <div>
+        <label for="filter">Show PO</label>
+        <select id="filter"><option value="">All POs</option></select>
+      </div>
+      <button id="exp-po" class="ghost" type="button" disabled>Export this PO</button>
+      <button id="exp-all" type="button">Export all to Excel</button>
+    </div>
+    <div class="scroll"><table>
+      <thead><tr>
+        <th class="mono">PO</th><th class="mono">GRN</th><th>Product</th><th>Type</th><th>Model</th><th>Serial</th><th>Range</th><th>Fields</th><th>Scanned</th><th></th>
+      </tr></thead>
+      <tbody id="records"></tbody>
+    </table></div>
+  </section>
+</main>
+
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const csrf = document.querySelector("[name=csrfmiddlewaretoken]").value;
+  let po = "";            // locked PO for this delivery
+  let current = null;     // item just scanned
+  let confirmed = false;  // receptionist has confirmed it
+  let keyLabels = [];
+
+  const api = async (url, body) => {
+    const res = await fetch(url, body === undefined ? {} : {
+      method: "POST", headers: { "Content-Type": "application/json", "X-CSRFToken": csrf },
+      body: JSON.stringify(body),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(data.error || "Something went wrong. Try again.");
+    return data;
+  };
+  const say = (msg, kind = "") => { const s = $("status"); s.textContent = msg; s.className = "status " + kind; };
+  const el = (tag, text, cls) => { const e = document.createElement(tag); if (text !== undefined) e.textContent = text; if (cls) e.className = cls; return e; };
+
+  // One place decides what is open, based on how far the flow has got.
+  function render() {
+    const step = !po ? 1 : !current ? 2 : !confirmed ? 3 : 4;
+    $("po-edit").hidden = !!po; $("po-locked").hidden = !po; $("po-badge").textContent = po;
+    const cls = (id, n) => { $(id).className = "cell " + (step === n ? "now" : step > n ? "done" : "off"); };
+    cls("c-po", 1);
+    $("c-scan").className = "cell " + (step === 2 || step === 3 ? "now" : step > 3 ? "done" : "off");
+    if (step === 3) $("c-scan").className = "cell done";
+    cls("c-grn", 4);
+
+    $("scan").disabled = step !== 2; $("go").disabled = step !== 2;
+    $("scan").placeholder = !po ? "Enter a PO first" : step === 2 ? "Waiting for scan…" : "Item scanned";
+    $("det-sec").hidden = !current;
+    $("confirm").hidden = confirmed; $("reject").hidden = confirmed;
+    $("hint").textContent = confirmed ? "Confirmed by the receptionist. Enter the GRN number to finish."
+                                      : "The receptionist can correct any key detail before confirming.";
+    $("grn").disabled = step !== 4;
+    $("save").disabled = !(step === 4 && $("grn").value.trim());
+    document.querySelectorAll("#key-grid input").forEach(i => i.readOnly = confirmed);
+  }
+
+  function showDetails(item) {
+    keyLabels = item.key_labels;
+    $("src").textContent = (item.title ? item.title + "  ·  " : "") + item.url;
+    const grid = $("key-grid"); grid.replaceChildren();
+    keyLabels.forEach((k, i) => {
+      const f = el("div", undefined, "field");
+      const l = el("label", k); l.htmlFor = "kf" + i;
+      const inp = el("input"); inp.type = "text"; inp.id = "kf" + i; inp.dataset.key = k; inp.value = item.details[k] || "";
+      const mark = () => f.classList.toggle("missing", !inp.value.trim());
+      inp.addEventListener("input", mark); mark();
+      f.append(l, inp); grid.append(f);
+    });
+    const tb = $("other").tBodies[0]; tb.replaceChildren();
+    let n = 0;
+    for (const [k, v] of Object.entries(item.details)) {
+      if (keyLabels.includes(k)) continue;
+      const tr = el("tr"); tr.append(el("td", k, "k"), el("td", v)); tb.append(tr); n++;
+    }
+    if (!n) { const tr = el("tr"); tr.append(Object.assign(el("td", "No other details found.", "empty"))); tb.append(tr); }
+  }
+
+  function setPo() {
+    const v = $("po").value.trim();
+    if (!v) { say("Enter the PO number first.", "err"); $("po").focus(); return; }
+    po = v; current = null; confirmed = false; render();
+    say(`Receiving against PO ${po}. Scan the first item.`);
+    $("scan").focus();
+  }
+
+  function changePo() {
+    if (current && !confirm("Discard the item on screen and change the PO?")) return;
+    po = ""; current = null; confirmed = false; $("grn").value = ""; render();
+    say("Enter the PO number being received.");
+    $("po").select();
+  }
+
+  async function scan() {
+    const url = $("scan").value.trim();
+    if (!url) return;
+    say("Reading the website…", "wait");
+    $("go").disabled = true;
+    try {
+      current = await api("/api/extract/", { url });
+      confirmed = false;
+      showDetails(current);
+      $("scan").value = "";
+      const miss = current.key_labels.length - current.found;
+      say(`Found ${current.count} details` + (miss ? `, ${miss} key detail${miss > 1 ? "s" : ""} not found` : "") + ". Waiting for the receptionist to confirm.", "wait");
+      render(); $("confirm").focus();
+    } catch (e) {
+      current = null; say(e.message, "err"); render(); $("scan").select();
+    }
+  }
+
+  function doConfirm() {
+    // take whatever the receptionist sees (including corrections) as the final key details
+    const edited = {};
+    document.querySelectorAll("#key-grid input").forEach(i => { edited[i.dataset.key] = i.value.trim(); });
+    const rest = {};
+    for (const [k, v] of Object.entries(current.details)) if (!keyLabels.includes(k)) rest[k] = v;
+    current.details = { ...edited, ...rest };
+    confirmed = true; render();
+    say("Confirmed. Enter the GRN number.");
+    $("grn").focus();
+  }
+
+  function reject() {
+    current = null; confirmed = false; render();
+    say("Item rejected. Scan the correct item.", "err");
+    $("scan").focus();
+  }
+
+  async function save() {
+    try {
+      const r = await api("/api/save/", {
+        po, grn: $("grn").value, url: current.url, title: current.title,
+        details: current.details, confirmed: true,
+      });
+      say(`Saved to PO ${r.po}, GRN ${r.grn}. Scan the next item.`);
+      current = null; confirmed = false; $("grn").value = ""; render();
+      await loadRecords(); $("scan").focus();
+    } catch (e) { say(e.message, "err"); }
+  }
+
+  async function loadRecords() {
+    const fpo = $("filter").value;
+    const data = await api("/api/records/" + (fpo ? "?po=" + encodeURIComponent(fpo) : ""));
+    const f = $("filter"), keep = f.value;
+    f.replaceChildren(el("option", "All POs")); f.firstChild.value = "";
+    Object.entries(data.pos).sort().forEach(([p, n]) => { const o = el("option", `${p}  (${n})`); o.value = p; f.append(o); });
+    f.value = keep;
+    $("exp-po").disabled = !f.value;
+
+    const tb = $("records"); tb.replaceChildren();
+    if (!data.records.length) {
+      const tr = el("tr"); const td = el("td", "Nothing received yet. Saved items appear here.", "empty"); td.colSpan = 10; tr.append(td); tb.append(tr); return;
+    }
+    for (const r of data.records) {
+      const d = r.details, tr = el("tr");
+      const fields = el("td"); const det = el("details");
+      det.append(el("summary", `${Object.values(d).filter(Boolean).length} fields`));
+      const t = el("table"); for (const [k, v] of Object.entries(d)) { if (!v) continue; const row = el("tr"); row.append(el("td", k, "k"), el("td", v)); t.append(row); }
+      det.append(t); fields.append(det);
+      const del = el("button", "Remove", "danger");
+      del.onclick = async () => { if (confirm(`Remove this item from PO ${r.po}?`)) { await api(`/api/records/${r.id}/delete/`, {}); loadRecords(); } };
+      const act = el("td"); act.append(del);
+      tr.append(el("td", r.po, "mono"), el("td", r.grn, "mono"), el("td", d["Instrument name"] || r.title || r.url),
+                el("td", d["Type"] || ""), el("td", d["Model number"] || "", "mono"), el("td", d["Serial number"] || "", "mono"),
+                el("td", d["Range"] || ""), fields, el("td", r.scanned), act);
+      tb.append(tr);
+    }
+  }
+
+  // A USB scanner types the code and presses Enter, so Enter means "scan finished".
+  $("po").addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); setPo(); } });
+  $("po-set").onclick = setPo;
+  $("po-change").onclick = changePo;
+  $("scan").addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); scan(); } });
+  $("go").onclick = scan;
+  $("confirm").onclick = doConfirm;
+  $("reject").onclick = reject;
+  $("grn").addEventListener("input", render);
+  $("grn").addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); if (!$("save").disabled) save(); } });
+  $("save").onclick = save;
+  $("filter").onchange = loadRecords;
+  $("exp-all").onclick = () => location.href = "/export/";
+  $("exp-po").onclick = () => location.href = "/export/?po=" + encodeURIComponent($("filter").value);
+
+  render();
+  loadRecords();
+})();
+</script>
+</body>
+</html>

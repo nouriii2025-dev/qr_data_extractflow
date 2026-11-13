@@ -1,0 +1,148 @@
+URL: https://productpass.wika.com/?s=3H0045MUKIU
+Rendered in browser: True
+Note: 
+Title: WIKA Product Passport
+Headings: []
+
+--- VISIBLE TEXT LINES ---
+WIKA Product Passport
+English
+Type 23X.50
+Bourdon Tube Pressure Gauges, Stainless Steel
+Series
+Serial number:
+3H0045MUKIU
+Item number:
+66455202
+Manufacturing date:
+01/2026
+Image shows an example of a standard version, which may differ from your product
+Product Details
+Product Documentation
+Certificates & Protocols
+Downloads
+Calibration History
+Product Features
+232.50.063 400 barg 2nd scale psig 1/4 NPT center back mount
+Measuring System 316 SS
+Case material: Stainless steel 316TI
+Ingress protection: IP 65
+NACE Sour Gas Service
+class 1.0
+Window: flat instrument glass
+adjustable pointer
+Additional ordering information: Tapping restrictions for screw
+Permissible ambient temperature: -40 … +60 °C
+Permissible medium temperature: + 200 °C
+Pressure Gauge Standard: International (standard Europe)
+2nd scale red
+stop-pin at zero *WIKA*
+with Serial number
+with QR Code
+Test report 2.2 per EN 10204
+Certificate Language: English and German
+Certificate for: pressure gauge
+Material certificate: Wetted metallic components
+Inspection certificate 3.1 per EN 10204
+Certificate type: Inspection certificate acc. to DIN EN 10204 3.1
+Certificate Language: English and German
+Certificate for: pressure gauge
+Material certificate: Wetted parts material (metal contents) with mill certificate incl. chemical analysis
+Label: WIKA standard without / with Tag-number
+Item based datasheet
+Print Preview
+Send via email
+Legal notice
+Privacy Policy
+T&Cs
+© 2026 WIKA Alexander Wiegand SE & Co. KG
+
+--- DETAILS FOUND ---
+Type = 23X.50
+Instrument name = Bourdon Tube Pressure Gauges, Stainless Steel
+Serial number = 3H0045MUKIU
+Item number = 66455202
+Model number = 232.50.063
+Range = 0 to 400 barg (2nd scale psig)
+Size = 1/4 NPT
+Mounting = center back mount
+Manufacturing date = 01/2026
+Case material = Stainless steel 316TI
+Ingress protection = IP 65
+Window = flat instrument glass
+Additional ordering information = Tapping restrictions for screw
+Permissible ambient temperature = -40 … +60 °C
+Permissible medium temperature = + 200 °C
+Pressure Gauge Standard = International (standard Europe)
+Certificate Language = English and German
+Certificate for = pressure gauge
+Material certificate = Wetted metallic components
+Certificate type = Inspection certificate acc. to DIN EN 10204 3.1
+Label = WIKA standard without / with Tag-number
+Language = EN
+Pass Result › Certificates List 1 = Testreport according to EN 10204 - 2.2, CT199391, Certificate_22
+Pass Result › Date Manufacturing = 01/2026
+Pass Result › E Mail Subject = 23X.50 Bourdon Tube Pressure Gauges, Stainless Steel<br>Series
+Pass Result › Has Datasheet = True
+Pass Result › Item Based Data Sheet Desc = Item Based Datasheet
+Pass Result › Item Number = 66455202
+Pass Result › Linked Documents 1 = DE, Datenblatt, https://www.wika.com/media/Data-sheets/Pressure/Pressure-gauges/ds_pm0202_de_de.pdf
+Pass Result › Linked Documents 2 = DE, Betriebsanleitung, https://www.wika.com/media/Operating-instructions/Quick-start-guides/qg_pressuregauges_de.pdf
+Pass Result › Linked Documents 3 = DE, Betriebsanleitung ATEX – Nenngröße 063 mm, https://www.wika.com/media/Operating-instructions/Operating-instructions/Pressure/Pressure-gauges/oi_2_atex_ns63_de.pdf
+Pass Result › Linked Documents 4 = DE, Betriebsanleitung ATEX – Nenngröße 100/160 mm, https://www.wika.com/media/Operating-instructions/Operating-instructions/Pressure/Pressure-gauges/oi_2_atex_en_de_fr_es.pdf
+Pass Result › Linked Documents 5 = DE, Produktzulassungen, https://www.wika.com/de-de/produktzulassungen.WIKA?product=232.50
+Pass Result › Linked Documents 6 = DE, EU Konformitätserklärungen, https://www.wika.com/de-de/eu_konformitaetserklaerungen.WIKA?scheme=CE+%28EU+Declaration+of+Conformity%29&naviSelectedChild=351019&product=232.50
+Pass Result › Linked Documents 7 = EN, Datasheet, https://www.wika.com/media/Data-sheets/Pressure/Pressure-gauges/ds_pm0202_en_co.pdf
+Pass Result › Linked Documents 8 = EN, Operating instruction, https://www.wika.com/media/Operating-instructions/Quick-start-guides/qg_pressuregauges_en.pdf
+Pass Result › Linked Documents 9 = EN, Operating instruction ATEX – Nominal size 063 mm, https://www.wika.com/media/Operating-instructions/Operating-instructions/Pressure/Pressure-gauges/oi_2_atex_ns63_en.pdf
+Pass Result › Linked Documents 10 = EN, Operating instruction ATEX – Nominal size 100/160 mm, https://www.wika.com/media/Operating-instructions/Operating-instructions/Pressure/Pressure-gauges/oi_2_atex_en_de_fr_es.pdf
+Pass Result › Linked Documents 11 = EN, Product approvals, https://www.wika.com/en-en/product_approvals.WIKA?product=232.50
+Pass Result › Linked Documents 12 = EN, EU declarations of conformity, https://www.wika.com/en-en/eu_declarations_of_conformity.WIKA?scheme=CE+%28EU+Declaration+of+Conformity%29&naviSelectedChild=355161&product=232.50
+Pass Result › Linked Documents 13 = ES, Hojas técnica, https://www.wika.es/upload/DS_PM0202_es_es_3668.pdf
+Pass Result › Linked Documents 14 = ES, Manual de instrucciones, https://www.wika.com/media/Operating-instructions/Quick-start-guides/qg_pressuregauges_es.pdf
+Pass Result › Linked Documents 15 = ES, Manual de instrucciones ATEX – DN 63, https://www.wika.es/upload/OI_14375617_ATEX_2_NS63_es_21999.pdf
+Pass Result › Linked Documents 16 = ES, Manual de instrucciones ATEX – DN100 y DN160, https://www.wika.es/upload/OI_2_ATEX_en_de_fr_es_6219.pdf
+Pass Result › Linked Documents 17 = ES, Certficados de productos, https://www.wika.es/download_approvals_es_es.WIKA?product=232.50
+Pass Result › Linked Documents 18 = ES, Declaraciones de productos, https://www.wika.es/download_ec_es_es.WIKA
+Pass Result › Linked Documents 19 = FR, Fiche technique, https://www.wika.fr/upload/DS_PM0202_fr_fr_3670.pdf
+Pass Result › Linked Documents 20 = FR, Mode d'emploi, https://www.wika.com/media/Operating-instructions/Quick-start-guides/qg_pressuregauges_fr.pdf
+Pass Result › Linked Documents 21 = FR, Mode d'emploi ATEX – DN 63, https://www.wika.fr/upload/OI_2_ATEX_NS63_fr_21998.pdf
+Pass Result › Linked Documents 22 = FR, Mode d'emploi ATEX – DN100 et DN160, https://www.wika.fr/upload/OI_2_ATEX_en_de_fr_es_6219.pdf
+Pass Result › Linked Documents 23 = FR, Agréments, https://www.wika.fr/download_approvals_fr_fr.WIKA
+Pass Result › Linked Documents 24 = FR, Déclaration de conformité norme UE, https://www.wika.fr/download_ec_fr_fr.WIKA
+Pass Result › Linked Documents 25 = IT, Scheda tecnica, https://www.wika.com/media/Data-sheets/Pressure/Pressure-gauges/ds_pm0202_it_it.pdf
+Pass Result › Linked Documents 26 = IT, Manuale d‘uso, https://www.wika.com/media/Operating-instructions/Operating-instructions/Pressure/Pressure-gauges/oi_pressuregauges_it.pdf
+Pass Result › Linked Documents 27 = IT, Manuale d‘uso ATEX – DN 63, https://www.wika.com/media/Operating-instructions/Operating-instructions/Pressure/Pressure-gauges/oi_2_atex_ns63_en.pdf
+Pass Result › Linked Documents 28 = IT, Manuale d‘uso ATEX – DN100 e DN160, https://www.wika.com/media/Operating-instructions/Operating-instructions/Pressure/Pressure-gauges/oi_2_atex_it.pdf
+Pass Result › Linked Documents 29 = IT, Omologazioni di prodotto, https://www.wika.com/it-it/omologazioni_di_prodotto.WIKA?product=232.50
+Pass Result › Linked Documents 30 = IT, Dichiarazioni di conformità UE, https://www.wika.com/it-it/dichiarazioni_di_conformita_ue.WIKA?product=232.50
+Pass Result › Linked Web References 1 = DE, 3D-Daten, https://www.wika.com/de-de/3d_daten.WIKA?measured_range=Druck&type=232.50
+Pass Result › Linked Web References 2 = EN, 3D-Data, https://www.wika.com/en-en/3d_data.WIKA?type=232.50
+Pass Result › Linked Web References 3 = ES, Dibujos en 3D, https://www.wika.es/download_es_es.WIKA
+Pass Result › Linked Web References 4 = IT, Disegni 3D, https://www.wika.com/it-it/disegni_3d.WIKA?type=232.50
+Pass Result › Linked Web References 5 = FR, Croquis en 3D
+Pass Result › Link Webshop = https://shop.wika.com/en-en/shop_home.WIKA?itemId=66455202
+Pass Result › Picture Desc = Image shows an example of a standard version, which may differ from your product
+Pass Result › Picture Url = local://product_23x_50.png
+Pass Result › Serial Number = 3H0045MUKIU
+Pass Result › Test Report List › Headers = 0 0, 0 0, 0 0
+Pass Result › Test Report List › Maximum Error = -
+Pass Result › Type Text = 23X.50
+Pass Result › Type Text Second Line = Bourdon Tube Pressure Gauges, Stainless Steel<br>Series
+Status = OK
+Version = 0.4a
+Configuration = 232.50.063 400 barg 2nd scale psig 1/4 NPT center back mount
+Measuring system = 316 SS
+Feature 1 = NACE Sour Gas Service
+Accuracy class = 1.0
+Feature 2 = adjustable pointer
+Feature 3 = 2nd scale red
+Feature 4 = stop-pin at zero *WIKA*
+Feature 5 = with Serial number
+Feature 6 = with QR Code
+Feature 7 = Test report 2.2 per EN 10204
+Feature 8 = Inspection certificate 3.1 per EN 10204
+Feature 9 = Item based datasheet
+
+--- BACKGROUND JSON (1 responses) ---
+{"Language": "EN", "PassResult": {"Attributes": [], "CalibrationHistory": {}, "CertificatesList": [["Testreport according to EN 10204 - 2.2", "CT199391", "Certificate_22"]], "DateManufacturing": "01/2026", "eMailBody": "Item Based Datasheet<br>66455202<br>Serial number<br>3H0045MUKIU<br>232.50.063  400 barg  2nd scale psig  1/4 NPT center back mount<br>Measuring System 316 SS <br>Case material: Stainless steel 316TI<br>Ingress protection: IP 65<br>NACE Sour Gas Service<br>class 1.0<br>Window: flat instrument glass<br>adjustable pointer<br>Additional ordering information:  Tapping restrictions for screw<br>Permissible ambient temperature: -40 … +60 °C<br>Permissible medium temperature: + 200 °C<br>Pressure Gauge Standard: International (standard Europe)<br>2nd scale red<br>stop-pin at zero  *WIKA*  <br>with Serial number<br>with QR Code<br>Test report 2.2 per EN 10204<br>Certificate Language: English and German<br>Certificate for: pressure gauge<br>Material certificate: Wetted metallic components<br>Inspection certificate 3.1 per EN 10204<br>Certificate type: Inspection certificate acc. to DIN EN 10204 3.1<br>Certificate Language: English and German<br>Certificate for: pressure gauge<br>Material certificate: Wetted parts material (metal contents) with mill certificate incl. chemical analysis<br>Label: WIKA standard without / with Tag-number  <br>", "eMailSubject": "23X.50 Bourdon Tube Pressure Gauges, Stainless Steel<br>Series", "HasDatasheet": true, "ItemBasedDataSheetDesc": "Item Based Datasheet", "ItemNumber": "66455202", "ItemText": "232.50.063  400 barg  2nd scale psig  1/4 NPT center back mount<br>Measuring System 316 SS <br>Case material: Stainless steel 316TI<br>Ingress protection: IP 65<br>NACE Sour Gas Service<br>class 1.0<br>Window: flat instrument glass<br>adjustable pointer<br>Additional ordering information:  Tapping restrictions for screw<br>Permissible ambient temperature: -40 … +60 °C<br>Permissible medium temperature: + 200 °C<br>Pressure Gauge Standard: International (standard Europe)<br>2nd scale red<br>stop-pin at zero  *WIKA*  <br>with Serial number<br>with QR Code<br>Test report 2.2 per EN 10204<br>Certificate Language: English and German<br>Certificate for: pressure gauge<br>Material certificate: Wetted metallic components<br>Inspection certificate 3.1 per EN 10204<br>Certificate type: Inspection certificate acc. to DIN EN 10204 3.1<br>Certificate Language: English and German<br>Certificate for: pressure gauge<br>Material certificate: Wetted parts material (metal contents) with mill certificate incl. chemical analysis<br>Label: WIKA standard without / with Tag-number  <br>", "LinkedDocuments": [["DE", "Datenblatt", "https://www.wika.com/media/Data-sheets/Pressure/Pressure-gauges/ds_pm0202_de_de.pdf"], ["DE", "Betriebsanleitung", "https://www.wika.com/media/Operating-instructions/Quick-start-guides/qg_pressuregauges_de.pdf"], ["DE", "Betriebsanleitung ATEX – Nenngröße 063 mm", "https://www.wika.com/media/Operating-instructions/Operating-instructions/Pressure/Pressure-gauges/oi_2_atex_ns63_de.pdf"], ["DE", "Betriebsanleitung ATEX – Nenngröße 100/160 mm", "https://www.wika.com/media/Operating-instructions/Operating-instructions/Pressure/Pressure-gauges/oi_2_atex_en_de_fr_es.pdf"], ["DE", "Produktzulassungen", "https://www.wika.com/de-de/produktzulassungen.WIKA?product=232.50"], ["DE", "EU Konformitätserklärungen", "https://www.wika.com/de-de/eu_konformitaetserklaerungen.WIKA?scheme=CE+%28EU+Declaration+of+Conformity%29&naviSelectedChild=351019&product=232.50"], ["EN", "Datasheet", "https://www.wika.com/media/Data-sheets/Pressure/Pressure-gauges/ds_pm0202_en_co.pdf"], ["EN", "Operating instruction", "https://www.wika.com/media/Operating-instructions/Quick-start-guides/qg_pressuregauges_en.pdf"], ["EN", "Operating instruction ATEX – Nominal size 063 mm", "https://www.wika.com/media/Operating-instructions/Operating-instructions/Pressure/Pressure-gauges/oi_2_atex_ns63_en.pdf"], ["EN", "Operating instruction ATEX – Nominal size 100/160 mm", "https://www.wika.com/media/Operating-instructions/Operating-instructions/Pressure/Pressure-gauges/oi_2_atex_en_de_fr_es.pdf"], ["EN", "Product approvals", "https://www.wika.com/en-en/product_approvals.WIKA?product=232.50"], ["EN", "EU declarations of conformity", "https://www.wika.com/en-en/eu_declarations_of_conformity.WIKA?scheme=CE+%28EU+Declaration+of+Conformity%29&naviSelectedChild=355161&product=232.50"], ["ES", "Hojas técnica", "https://www.wika.es/upload/DS_PM0202_es_es_3668.pdf"], ["ES", "Manual de instrucciones", "https://www.wika.com/media/Operating-instructions/Quick-start-guides/qg_pressuregauges_es.pdf"], ["ES", "Manual de instrucciones ATEX – DN 63", "https://www.wika.es/upload/OI_14375617_ATEX_2_NS63_es_21999.pdf"], ["ES", "Manual de instrucciones ATEX – DN100 y DN160", "https://www.wika.es/upload/OI_2_ATEX_en_de_fr_es_6219.pdf"], ["ES", "Certficados de productos", "https://www.wika.es/download_approvals_es_es.WIKA?product=232.50"], ["ES", "Declaraciones de productos", "https://www.wika.es/download_ec_es_es.WIKA"], ["FR", "Fiche technique", "https://www.wika.fr/upload/DS_PM0202_fr_fr_3670.pdf"], ["FR", "Mode d'emploi", "https://www.wika.com/media/Operating-instructions/Quick-start-guides/qg_pressuregauges_fr.pdf"], ["FR", "Mode d'emploi ATEX – DN 63", "https://www.wika.fr/upload/OI_2_ATEX_NS63_fr_21998.pdf"], ["FR", "Mode d'emploi ATEX – DN100 et DN160", "https://www.wika.fr/upload/OI_2_ATEX_en_de_fr_es_6219.pdf"], ["FR", "Agréments", "https://www.wika.fr/download_approvals_fr_fr.WIKA"], ["FR", "Déclaration de conformité norme UE", "https://www.wika.fr/download_ec_fr_fr.WIKA"], ["IT", "Scheda tecnica", "https://www.wika.com/media/Data-sheets/Pressure/Pressure-gauges/ds_pm0202_it_it.pdf"], ["IT", "Manuale d‘uso", "https://www.wika.com/media/Operating-instructions/Operating-instructions/Pressure/Pressure-gauges/oi_pressuregauges_it.pdf"], ["IT", "Manuale d‘uso ATEX – DN 63", "https://www.wika.com/media/Operating-instructions/Operating-instructions/Pressure/Pressure-gauges/oi_2_atex_ns63_en.pdf"], ["IT", "Manuale d‘uso ATEX – DN100 e DN160", "https://www.wika.com/media/Operating-instructions/Operating-instructions/Pressure/Pressure-gauges/oi_2_atex_it.pdf"], ["IT", "Omologazioni di prodotto", "https://www.wika.com/it-it/omologazioni_di_prodotto.WIKA?product=232.50"], ["IT", "Dichiarazioni di conformità UE", "https://www.wika.com/it-it/dichiarazioni_di_conformita_ue.WIKA?product=232.50"]], "LinkedWebReferences": [["DE", "3D-Daten", "https://www.wika.com/de-de/3d_daten.WIKA?measured_range=Druck&type=232.50"], ["EN", "3D-Data", "https://www.wika.com/en-en/3d_data.WIKA?type=232.50"], ["ES", "Dibujos en 3D", "https://www.wika.es/download_es_es.WIKA"], ["IT", "Disegni 3D", "https://www.wika.com/it-it/disegni_3d.WIKA?type=232.50"], ["FR", "Croquis en 3D", ""]], "LinkWebshop": "https://shop.wika.com/en-en/shop_home.WIKA?itemId=66455202", "Manufacturer": "", "PictureData": "", "PictureDesc": "Image shows an example of a standard version, which may differ from your product", "PictureUrl": "local://product_23x_50.png", "Reserved": {}, "SerialNumber": "3H0045MUKIU", "TestReportList": {"Data": [], "Headers": ["0 0", "0 0", "0 0"], "MaximumError": "-"}, "TypeText": "23X.50", "TypeTextSecondLine": "Bourdon Tube Pressure Gauges, Stainless Steel<br>Series", "XMLData": ""}, "Status": "OK", "Version": "0.4a"}
